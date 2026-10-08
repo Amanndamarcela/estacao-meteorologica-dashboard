@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<section>
+        <h2>Ultima medição</h2>
+        <div id="ultimo">
+            Carregando...
+        </div>
+    </section>
+
+    <section>
+        <h2>Medição do dia</h2>
+        <div id="dia">
+            Carregando...
+        </div>
+    </section>
+
+    <section>
+        <h2>Medição da semana</h2>
+        <div id="semana">
+            Carregando...
+        </div>
+    </section>
+
+    <section>
+        <h2>Medição do mês</h2>
+        <div id="mes">
+            Carregando...
+        </div>
+    </section>
+    
+<!--grafico de temperatura, umidade e pressão atmosférica-->
+    <h2>Histórico de Temperatura</h2>
+<canvas id="graficoTemperatura"></canvas>
+
+<h2>Histórico de Umidade</h2>
+<canvas id="graficoUmidade"></canvas>
+
+<h2>Histórico de Pressão Atmosférica</h2>
+<canvas id="graficoPressao"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+<script src="dados.js"></script>
+</body>
+</html>
