@@ -1,9 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    max-width: 1100px;
     margin: auto;
     padding: 20px;
-    background-color: #f2f2f2;
+    background: linear-gradient(135deg, #e0ffff, #ffe6dc);
+    color: #653d34;
 }
 
 h1 {
@@ -11,25 +12,48 @@ h1 {
 }
 
 section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(175, 85, 55, 0.10);
 }
 
+/* Tabelas */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d6e8f5;
 }
 
-th, td {
-    border: 1px solid #000000;
-    padding: 8px;
-    text-align: center;
-}
-
+/* Cabeçalho da tabela */
 th {
-    background-color: #eeeeee;
+    background-color: #d8edff;
+    color: #174a7e;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #a9d4f5;
+}
+
+/* Células */
+td {
+    padding: 12px;
+    text-align: center;
+    color: #334155;
+    border-bottom: 1px solid #e2edf5;
+}
+
+/* Linhas alternadas */
+tr:nth-child(even) td {
+    background-color: #f0f8ff;
+}
+
+/* Efeito ao passar o mouse */
+tr:hover td {
+    background-color: #e0f2fe;
 }
 
 .card {
@@ -59,29 +83,34 @@ color: #64748b;
 }
 
 /* Estilos para os cards de cada medição */
-.umidade {
-background-color: #eff6ff;
-border-left: 5px solid #3b82f6;
-}
-
+/* Temperatura — amarelo-sol */
 .temperatura {
-background-color: #fff1f0;
-border-left: 5px solid #ef4444;
+    background-color: #fff4d6;
+    border-left: 5px solid #f5b942;
 }
 
+/* Umidade — azul-claro */
+.umidade {
+    background-color: #e3f2fd;
+    border-left: 5px solid #42a5f5;
+}
+
+/* Pressão — azul-lavanda */
 .pressao {
-background-color: #f5f3ff;
-border-left: 5px solid #8b5cf6;
-}         
-
-.luminosidade {
-background-color: #fffbeb;
-border-left: 5px solid #f59e0b;
+    background-color: #eef0ff;
+    border-left: 5px solid #7986cb;
 }
 
+/* Luminosidade — amarelo suave */
+.luminosidade {
+    background-color: #fff9e8;
+    border-left: 5px solid #ffca62;
+}
+
+/* Chuva — turquesa */
 .chuva {
-background-color: #ecfeff;
-border-left: 5px solid #06b6d4;
+    background-color: #dcf5f7;
+    border-left: 5px solid #26b6c9;
 }
 
 @media (max-width: 600px) {
@@ -90,4 +119,172 @@ border-left: 5px solid #06b6d4;
 }
     #ultimo {
     grid-template-columns: 1fr;}
+}
+
+/* personalização dos cards de temperatura*/
+/* Temperatura máxima — amarelo-sol */
+.temp-maxima {
+    background-color: #fff0c2;
+    border-left: 5px solid #ffb703;
+}
+
+/* Temperatura mínima — turquesa */
+.temp-minima {
+    background-color: #d5f5ee;
+    border-left: 5px solid #00b8a9;
+}
+
+/* Temperatura média — coral */
+.temp-media {
+    background-color: #ffe0d6;
+    border-left: 5px solid #fb6f52;
+}
+
+/* Efeito ao passar o mouse nos cartões */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Organiza os três cartões de temperatura */
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+/* Adapta os cartões para telas pequenas */
+@media (max-width: 600px) {
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cartões de condições meteorológicas */
+.clima-card {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f9ff;
+    border-radius: 12px;
+}
+
+.clima-icone {
+    font-size: 75px;
+    margin-bottom: 15px;
+}
+
+.clima-card h3 {
+    color: #174a7e;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.clima-card p {
+    color: #245782;
+    font-size: 15px;
+    margin: 8px 0;
+}
+
+/* fundos das seções */
+h1 {
+    color: #e85d3f;
+    text-align: center;
+    font-size: 34px;
+}
+
+h2 {
+    color: #b34f38;
+    font-size: 22px;
+}
+
+/* Estilo para o cabeçalho do dashboard */
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: linear-gradient(
+        110deg,
+        #fff2bf 0%,
+        #c5ecff 30%,
+        #87c9f5 65%,
+        #3979ba 100%
+    );
+
+    padding: 35px 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(30, 80, 140, 0.15);
+}
+
+.cabecalho-texto {
+    flex: 1;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    color: #123b69;
+    font-size: 32px;
+    margin: 0;
+}
+
+.cabecalho p {
+    color: #245782;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.clima-sol,
+.clima-chuva {
+    font-size: 65px;
+    flex-shrink: 0;
+}
+
+section h2 {
+    color: #174a7e;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Personalização do botão de consulta de data */
+/* Campo de seleção de data */
+#dataConsulta {
+    padding: 12px 15px;
+    border: 2px solid #b7daf5;
+    border-radius: 10px;
+    background-color: #f0f9ff;
+    color: #174a7e;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Destaque ao selecionar o campo */
+#dataConsulta:focus {
+    outline: none;
+    border-color: #3679b9;
+}
+
+/* Botão Consultar */
+#botaoConsultar {
+    background: linear-gradient(135deg, #42a5f5, #2468b2);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+#botaoConsultar:hover {
+    background: linear-gradient(135deg, #2468b2, #174a7e);
+    transform: translateY(-2px);
 }

@@ -11,8 +11,15 @@
 
     <!-- Cabeçalho principal do dashboard -->
 <header>
-    <h1>Estação Meteorológica</h1>
-    <p>Monitoramento e análise de dados meteorológicos</p>
+    <header class="cabecalho">
+    <div class="clima-sol">☀️</div>
+
+    <div class="cabecalho-texto">
+        <h1>Estação Meteorológica</h1>
+        <p>Monitoramento climático em tempo real e histórico</p>
+    </div>
+
+    <div class="clima-chuva">🌧️</div>
 </header>
 
 <section>
@@ -62,6 +69,23 @@
     </button>
 </section>
 
+<!-- Resumo das temperaturas da data selecionada -->
+<section>
+    <h2>Resumo de Temperatura</h2>
+
+    <div id="resumoTemperatura">
+        Selecione uma data para visualizar o resumo.
+    </div>
+</section>
+
+<!-- Condições Meteorológicas -->
+<section>
+    <h2>🌤️ Condições Meteorológicas</h2>
+
+    <div id="condicaoMeteorologica">
+        <p>Selecione uma data para visualizar as condições.</p>
+    </div>
+</section>
 
 <!--grafico de temperatura, umidade, pressão atmosférica, luminosidade e chuva -->
 
