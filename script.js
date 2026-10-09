@@ -17,12 +17,35 @@ async function buscarUltimo() {
     );
     const dados = await resposta.json();
     document.getElementById("ultimo").innerHTML = `
-        <p>Temperatura: ${dados.temperature} °C</p>
-        <p>Umidade: ${dados.humidity} %</p>
-        <p>Pressão: ${dados.pressure} hPa</p>
-        <p>Luminosidade: ${dados.luminosity}</p>
-        <p>Chuva: ${dados.raindrop}</p>
-        <p>Data: ${formatarData(dados.timestamp)}</p>
+
+<div class="card temperatura">
+    <h3>Temperatura 🌡️</h3>
+    <p>${dados.temperature}ºC</p>
+</div>
+
+<div class="card umidade">
+    <h3>Umidade 💧</h3>
+    <p>${dados.humidity}%</p>
+</div>
+
+<div class="card pressao">
+    <h3>Pressão 🌬️</h3>
+    <p>${dados.pressure} hPa</p>
+</div>
+
+<div class="card luminosidade">
+    <h3>Luminosidade ☀️</h3>
+    <p>${dados.luminosity}</p>
+</div>
+
+<div class="card chuva">
+    <h3>Chuva 🌧️</h3>
+    <p>${dados.raindrop}</p>
+</div>
+
+<div class="data-medicao">
+    <p>Data: ${formatarData(dados.timestamp)}</p>
+</div>
     `;
 }
 
