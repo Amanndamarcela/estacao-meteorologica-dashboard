@@ -181,6 +181,7 @@ document.getElementById("condicaoMeteorologica").innerHTML = `
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
     tooltip: {
         callbacks: {
@@ -252,31 +253,3 @@ document.getElementById("condicaoMeteorologica").innerHTML = `
 
 carregarDadosAPI().catch(console.error);
 
-
- // Encontra o botão Consultar no HTML
-const botaoConsultar = document.getElementById("botaoConsultar");
-
-// Detecta quando o usuário clica no botão
-botaoConsultar.addEventListener("click", async function() {
-
-    // Obtém a data escolhida pelo usuário
-    const data = document.getElementById("dataConsulta").value;
-
-    // Verifica se alguma data foi selecionada
-    if (!data) {
-        alert("Selecione uma data para consultar.");
-        return;
-    }
-
-    try {
-        // Atualiza os cinco gráficos
-        await carregarDadosAPI(data);
-
-        // Atualiza a tabela de medições do dia
-        await buscarDia(data);
-
-    } catch (erro) {
-        console.error("Erro ao consultar:", erro);
-        alert("Não foi possível consultar os dados.");
-    }
-});

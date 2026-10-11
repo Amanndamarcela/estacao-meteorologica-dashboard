@@ -288,3 +288,263 @@ section h2 {
     background: linear-gradient(135deg, #2468b2, #174a7e);
     transform: translateY(-2px);
 }
+
+/* Botão de expandir medições */
+#botaoExpandirDia {
+    display: none;
+    margin: 20px auto 0;
+    padding: 12px 25px;
+    background-color: #3679b9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#botaoExpandirDia:hover {
+    background-color: #174a7e;
+}
+
+#botaoExpandirDia,
+#botaoExpandirSemana,
+#botaoExpandirMes {
+    display: none;
+    margin: 20px auto 0;
+    padding: 12px 25px;
+    background-color: #3679b9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#botaoExpandirDia:hover,
+#botaoExpandirSemana:hover,
+#botaoExpandirMes:hover {
+    background-color: #174a7e;
+}
+
+
+/* ===================================== */
+/* BOTÕES DE CONSULTAR DATA              */
+/* ===================================== */
+
+#consultarDia,
+#consultarSemana,
+#consultarMes {
+    background: linear-gradient(135deg, #2474bf, #14518f);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(25, 90, 150, 0.20);
+    transition: all 0.3s ease;
+}
+
+#consultarDia:hover,
+#consultarSemana:hover,
+#consultarMes:hover {
+    background: linear-gradient(135deg, #368cda, #1c65ad);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(25, 90, 150, 0.30);
+}
+
+#consultarDia:active,
+#consultarSemana:active,
+#consultarMes:active {
+    transform: translateY(0);
+}
+
+
+/* ===================================== */
+/* CAMPOS DE SELEÇÃO DE DATA             */
+/* ===================================== */
+
+#dataDia,
+#dataSemana,
+#dataMes {
+    padding: 11px 14px;
+    border: 1px solid #b7d2e8;
+    border-radius: 10px;
+    background-color: #f8fbff;
+    color: #244866;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#dataDia:focus,
+#dataSemana:focus,
+#dataMes:focus {
+    outline: none;
+    border-color: #2474bf;
+    box-shadow: 0 0 0 3px rgba(36, 116, 191, 0.15);
+}
+
+
+/* ===================================== */
+/* BOTÕES VER TODAS AS MEDIÇÕES          */
+/* ===================================== */
+
+#botaoExpandirDia,
+#botaoExpandirSemana,
+#botaoExpandirMes {
+    margin: 20px auto 5px;
+    padding: 11px 24px;
+    background: #f0f7ff;
+    color: #195a99;
+    border: 1px solid #a8cdec;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#botaoExpandirDia:hover,
+#botaoExpandirSemana:hover,
+#botaoExpandirMes:hover {
+    background: #dceeff;
+    border-color: #2474bf;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(25, 90, 150, 0.12);
+}
+
+/* Acessibilidade para navegação por teclado */
+#consultarDia:focus-visible,
+#consultarSemana:focus-visible,
+#consultarMes:focus-visible,
+#botaoExpandirDia:focus-visible,
+#botaoExpandirSemana:focus-visible,
+#botaoExpandirMes:focus-visible {
+    outline: 3px solid #78b9f5;
+    outline-offset: 3px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 600px) {
+    #consultarDia,
+    #consultarSemana,
+    #consultarMes {
+        margin-top: 8px;
+    }
+
+    #dataDia,
+    #dataSemana,
+    #dataMes {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+.filtro-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+#botaoExpandirDia,
+#botaoExpandirSemana,
+#botaoExpandirMes {
+    margin: 20px auto;
+}
+
+/* Centralizar os títulos dos blocos */
+
+section h2 {
+    text-align: center;
+}
+
+
+/* ===================================== */
+/* CARROSSEL DE GRÁFICOS                 */
+/* ===================================== */
+
+.carrossel-graficos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.area-graficos {
+    flex: 1;
+    min-width: 0;
+}
+
+.slide-grafico {
+    display: none;
+    width: 100%;
+}
+
+.slide-grafico.ativo {
+    display: block;
+}
+
+.slide-grafico h3 {
+    text-align: center;
+    color: #195a99;
+    margin-bottom: 20px;
+}
+
+.grafico-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+}
+
+/* Botões das setas */
+
+.seta-grafico {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2474bf, #14518f);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(25, 90, 150, 0.2);
+    transition: 0.3s;
+}
+
+.seta-grafico:hover {
+    background: #368cda;
+    transform: scale(1.08);
+}
+
+.contador-graficos {
+    text-align: center;
+    color: #51718e;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* Ajuste para celulares */
+
+@media (max-width: 600px) {
+    .carrossel-graficos {
+        gap: 5px;
+    }
+
+    .seta-grafico {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .grafico-container {
+        height: 280px;
+    }
+}

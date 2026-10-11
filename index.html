@@ -10,7 +10,6 @@
 <body>
 
     <!-- Cabeçalho principal do dashboard -->
-<header>
     <header class="cabecalho">
     <div class="clima-sol">☀️</div>
 
@@ -30,45 +29,19 @@
     </section>
 
     <section>
-        <h2>Medição do dia</h2>
-        <div id="dia">
-            Carregando...
-        </div>
-    </section>
+    <h2>Medição do dia</h2>
 
-    <section>
-        <h2>Medição da semana</h2>
-        <div id="semana">
-            Carregando...
-        </div>
-    </section>
+    <div class="filtro-data">
+        <input type="date" id="dataDia" value="2026-09-10">
+        <button type="button" id="consultarDia">Consultar dia</button>
+    </div>
 
-    <section>
-        <h2>Medição do mês</h2>
-        <div id="mes">
-            Carregando...
-        </div>
-    </section>
-    
-
-<section>
-    <h2>Consultar dados por data</h2>
-
-    <label for="dataConsulta">
-        Selecione uma data:
-    </label>
-
-    <input
-        type="date"
-        id="dataConsulta"
-        value="2026-09-10"
-    >
-
-    <button id="botaoConsultar" type="button">
-        Consultar
+    <div id="dia">Carregando...</div>
+    <button id="botaoExpandirDia" type="button">
+        Ver todas as medições ▼
     </button>
 </section>
-
+    
 <!-- Resumo das temperaturas da data selecionada -->
 <section>
     <h2>Resumo de Temperatura</h2>
@@ -87,32 +60,104 @@
     </div>
 </section>
 
+<section>
+    <h2>Medição da semana</h2>
+
+    <div class="filtro-data">
+        <input type="date" id="dataSemana" value="2026-09-10">
+        <button type="button" id="consultarSemana">Consultar semana</button>
+    </div>
+
+    <div id="semana">Carregando...</div>
+    <button id="botaoExpandirSemana" type="button">
+        Ver todas as medições ▼
+    </button>
+</section>
+
+<section>
+    <h2>Medição do mês</h2>
+
+<div class="filtro-data">
+    <input type="month" id="dataMes" value="2026-09">
+    <button type="button" id="consultarMes">Consultar mês</button>
+</div>
+
+    <div id="mes">Carregando...</div>
+    <button id="botaoExpandirMes" type="button">
+        Ver todas as medições ▼
+    </button>
+</section>
+
 <!--grafico de temperatura, umidade, pressão atmosférica, luminosidade e chuva -->
 
-<section>
-    <h2>Histórico de Temperatura</h2>
-<canvas id="graficoTemperatura"></canvas>
-</section>  
 
-<section>
-<h2>Histórico de Umidade</h2>
-<canvas id="graficoUmidade"></canvas>
-</section>  
+<section class="secao-graficos">
+    <h2>Histórico Meteorológico</h2>
 
-<section>
-<h2>Histórico de Pressão Atmosférica</h2>
-<canvas id="graficoPressao"></canvas>
+    <div class="carrossel-graficos">
+
+        <button
+            id="setaAnterior"
+            class="seta-grafico"
+            type="button"
+            aria-label="Gráfico anterior">
+            &#10094;
+        </button>
+
+        <div class="area-graficos">
+
+            <div class="slide-grafico ativo">
+                <h3>🌡️ Histórico de Temperatura</h3>
+                <div class="grafico-container">
+                    <canvas id="graficoTemperatura"></canvas>
+                </div>
+            </div>
+
+            <div class="slide-grafico">
+                <h3>💧 Histórico de Umidade</h3>
+                <div class="grafico-container">
+                    <canvas id="graficoUmidade"></canvas>
+                </div>
+            </div>
+
+            <div class="slide-grafico">
+                <h3>🌬️ Histórico de Pressão Atmosférica</h3>
+                <div class="grafico-container">
+                    <canvas id="graficoPressao"></canvas>
+                </div>
+            </div>
+
+            <div class="slide-grafico">
+                <h3>☀️ Histórico de Luminosidade</h3>
+                <div class="grafico-container">
+                    <canvas id="graficoLuminosidade"></canvas>
+                </div>
+            </div>
+
+            <div class="slide-grafico">
+                <h3>🌧️ Histórico do Sensor de Chuva</h3>
+                <div class="grafico-container">
+                    <canvas id="graficoChuva"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+        <button
+            id="setaProxima"
+            class="seta-grafico"
+            type="button"
+            aria-label="Próximo gráfico">
+            &#10095;
+        </button>
+
+    </div>
+
+    <p id="contadorGraficos" class="contador-graficos">
+        1 de 5
+    </p>
 </section>
 
-<section>
-<h2>Histórico de Luminosidade</h2>
-<canvas id="graficoLuminosidade"></canvas>
-</section>
-
-<section>
-<h2>Histórico do Sensor de Chuva</h2>
-<canvas id="graficoChuva"></canvas>
-</section>  
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
