@@ -76,8 +76,8 @@ Projeto desenvolvido por estudantes do curso de Ciência da Computação.
 
 **Integrantes:**
 - Amanda Marcela Rosa - Amanndamarcela
-- Mikaelle Pinheiro - mikapinheiro
-- Larissa - larihs005
+- Mikaelle Giovanna Pinheiro - mikapinheiro
+- Larissa dos Santos Alves - larihs005
 - Pedro Augusto Babuya Tinoco - pedrobabuya0
 - Maria Eduarda - dudavs12
 
